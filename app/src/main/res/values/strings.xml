@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">BeHappy</string>
+  <string name="happiness_scale">Happiness Scale</string>
+  <string name="sad">Sad</string>
+  <string name="happy">Happy</string>
+  <string name="meh">Meh</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/sad"
+        motion:constraintSetEnd="@+id/happy"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@id/happyView"
+            motion:touchAnchorSide="right" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="2"
+                android:scaleY="2"
+                motion:framePosition="50"
+                motion:target="@id/happyView" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/sad">
+        <Constraint
+            android:id="@+id/happyView"
+            android:layout_width="@dimen/happySize"
+            android:layout_height="@dimen/happySize"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/happy">
+        <Constraint
+            android:id="@id/happyView"
+            android:layout_width="@dimen/happySize"
+            android:layout_height="@dimen/happySize"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
